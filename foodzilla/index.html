@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SNACKZILLA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4" style="max-width: 600px; width: 100%;">
+            <div class="container-fluid">
+                <h2 class="text-center mb-4">SNACKZILLA</h2>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+                    crossorigin="anonymous"></script>
+                <br>
+                <!--first and last name-->
+                <div class="mb-3">
+                    <label for="nomeCliente" class="form-label">Who's hungry?</label>
+                    <input type="text" class="form-control" id="nomeCliente">
+                </div>
+
+                <!--form-->
+                <!--menu-->
+                <select class="form-select form-select-lg mb-3" id="selectedMenu" onchange="showMenu()">
+                    <option selected>Choose your Victim</option>
+                    <option value="1">Monster Meals</option>
+                    <option value="2">Tiny Bites</option>
+                    <option value="3">Snack Attacks</option>
+                    <option value="4">Guilty Pleasures</option>
+                    <option value="5">Crave Crushers</option>
+                </select>
+
+                <!--div to show the menu image and description-->
+                <div id="menuInfo" class="card d-none mb-4" style="max-width: 400px;">
+                    <img id="menuImg" class="card-img-top" alt="menuimg">
+                    <div class="card-body">
+                        <h5 class="card-title" id="menuTitle"></h5>
+                        <p class="card-text" id="menuDescrip"></p>
+                    </div>
+                </div>
+
+                <!--dessert-->
+                <select class="form-select form-select-lg mb-3" id="selectedDessert" onchange="showDessert()">
+                    <option selected>Choose your Dessertzilla</option>
+                    <option value="1">Sweetzilla</option>
+                    <option value="2">Sugar Rush</option>
+                    <option value="3">Cravings Corner</option>
+                </select>
+
+                <!--div to show the dessert image and description-->
+                <div id="dessertInfo" class="card d-none mb-4" style="max-width: 400px;">
+                    <img id="dessertImg" class="card-img-top" alt="dessertimg">
+                    <div class="card-body">
+                        <h5 class="card-title" id="dessertTitle"></h5>
+                        <p class="card-text" id="dessertDescrip"></p>
+                    </div>
+                </div>
+                <!--end form-->
+
+                <!--button-->
+                <button class="btn btn-primary" onclick="submitOrder()">Take a bite!</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
