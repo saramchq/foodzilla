@@ -2,72 +2,142 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SNACKZILLA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SNACKZILLA</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="card p-4" style="max-width: 600px; width: 100%;">
-            <div class="container-fluid">
-                <h2 class="text-center mb-4">SNACKZILLA</h2>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-                    crossorigin="anonymous"></script>
-                <br>
-                <!--first and last name-->
-                <div class="mb-3">
-                    <label for="nomeCliente" class="form-label">Who's hungry?</label>
-                    <input type="text" class="form-control" id="nomeCliente">
-                </div>
+<body class="bg-light">
+  <div class="d-flex justify-content-center align-items-center vh-100"  style="background-color:#75a66f">
+    <div class="card p-4 shadow main-card">
+      <div class="container-fluid">
 
-                <!--form-->
-                <!--menu-->
-                <select class="form-select form-select-lg mb-3" id="selectedMenu" onchange="showMenu()">
-                    <option selected>Choose your Victim</option>
-                    <option value="1">Monster Meals</option>
-                    <option value="2">Tiny Bites</option>
-                    <option value="3">Snack Attacks</option>
-                    <option value="4">Guilty Pleasures</option>
-                    <option value="5">Crave Crushers</option>
-                </select>
-
-                <!--div to show the menu image and description-->
-                <div id="menuInfo" class="card d-none mb-4" style="max-width: 400px;">
-                    <img id="menuImg" class="card-img-top" alt="menuimg">
-                    <div class="card-body">
-                        <h5 class="card-title" id="menuTitle"></h5>
-                        <p class="card-text" id="menuDescrip"></p>
-                    </div>
-                </div>
-
-                <!--dessert-->
-                <select class="form-select form-select-lg mb-3" id="selectedDessert" onchange="showDessert()">
-                    <option selected>Choose your Dessertzilla</option>
-                    <option value="1">Sweetzilla</option>
-                    <option value="2">Sugar Rush</option>
-                    <option value="3">Cravings Corner</option>
-                </select>
-
-                <!--div to show the dessert image and description-->
-                <div id="dessertInfo" class="card d-none mb-4" style="max-width: 400px;">
-                    <img id="dessertImg" class="card-img-top" alt="dessertimg">
-                    <div class="card-body">
-                        <h5 class="card-title" id="dessertTitle"></h5>
-                        <p class="card-text" id="dessertDescrip"></p>
-                    </div>
-                </div>
-                <!--end form-->
-
-                <!--button-->
-                <button class="btn btn-primary" onclick="submitOrder()">Take a bite!</button>
-            </div>
+        <!-- App Title -->
+       <!-- <h2 class="text-center mb-4 text-success fw-bold">SNACKZILLA</h2>-->
+        <div class="text-center">
+        <img src="imgs/logo.png" style="width:300px;" alt="logo">
         </div>
+        <br>
+        <!-- Name input -->
+        <div class="mb-3">
+          <label for="clientName" class="form-label text-success fs-5 fw-semibold">Who's hungry?</label>
+          <input type="text" class="form-control border-success fs-5" id="clientName" placeholder="Enter your name" />
+        </div>
+
+        <!-- Menu selection -->
+        <select class="form-select form-select-lg mb-3 border-success" id="selectedMenu" onchange="showMenu()">
+          <option selected>Choose your Victim</option>
+          <option value="1">Monster Meals</option>
+          <option value="2">Tiny Bites</option>
+          <option value="3">Snack Attacks</option>
+          <option value="4">Guilty Pleasures</option>
+          <option value="5">Crave Crushers</option>
+        </select>
+
+        <!-- Extras radio and checkboxes -->
+        <div id="extrasSection" class="d-none">
+          <p class="mt-3 fw-semibold">Do you want to add extras?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="extrasOption" id="extrasYes" value="yes" onchange="toggleExtras(true)">
+            <label class="form-check-label" for="extrasYes">Yes</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="extrasOption" id="extrasNo" value="no" onchange="toggleExtras(false)">
+            <label class="form-check-label" for="extrasNo">No</label>
+          </div>
+
+          <div id="extrasList" class="d-none ms-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Cheese" id="extraCheese">
+              <label class="form-check-label" for="extraCheese">Cheese</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Bacon" id="extraBacon">
+              <label class="form-check-label" for="extraBacon">Bacon</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="Extra Sauce" id="extraSauce">
+              <label class="form-check-label" for="extraSauce">Extra Sauce</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu card preview -->
+        <div id="menuInfo" class="card d-none mb-4 mt-3 border-success">
+          <img id="menuImg" class="card-img-top" alt="menuImg">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-success" id="menuTitle"></h5>
+            <p class="card-text" id="menuDescrip"></p>
+          </div>
+        </div>
+
+        <!-- Dessert selection -->
+        <select class="form-select form-select-lg mb-3 border-success" id="selectedDessert" onchange="showDessert()">
+          <option selected>Choose your Dessertzilla</option>
+          <option value="1">Sweetzilla</option>
+          <option value="2">Sugar Rush</option>
+          <option value="3">Cravings Corner</option>
+        </select>
+
+        <!-- Dessert card preview -->
+        <div id="dessertInfo" class="card d-none mb-4 border-success">
+          <img id="dessertImg" class="card-img-top" alt="dessertimg">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-success" id="dessertTitle"></h5>
+            <p class="card-text" id="dessertDescrip"></p>
+          </div>
+        </div>
+
+        <!-- Submit order button -->
+        <div class="text-center">
+          <button class="btn btn-success px-4" onclick="submitOrder()">Take a bite!</button>
+        </div>
+
+        <!-- Divider -->
+        <hr class="my-4 border-success">
+
+        <!-- Filters -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+          <button class="btn btn-outline-success" onclick="renderOrderTable('all')">All</button>
+          <button class="btn btn-outline-warning" onclick="renderOrderTable('withExtras')">With Extras</button>
+          <button class="btn btn-outline-secondary" onclick="renderOrderTable('withoutExtras')">Without Extras</button>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="table-responsive">
+          <table class="table table-bordered text-center align-middle">
+            <thead class="table-success">
+              <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Client</th>
+                <th scope="col">Products</th>
+                <th scope="col">Extras</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+              <!-- Orders go here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Finalize all orders -->
+        <div class="text-center mt-4">
+          <button class="btn btn-success px-4" onclick="clearAllOrders()">YUMMIEEEEE!</button>
+        </div>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 

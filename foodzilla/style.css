@@ -1,0 +1,10 @@
+.main-card {
+    max-width: 700px;
+    width: 1000px;
+    border: 2px solid #198754;
+}
+
+* {
+    background-color: white;
+}
+
