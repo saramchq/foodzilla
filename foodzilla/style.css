@@ -18,3 +18,27 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+.green-background {
+  background-image: url('imgs/background.png');
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+#dessertImg {
+  width: 500px;    
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px !important;
+  padding: 3rem;
+}
+
+#menuImg {
+  width: 500px;    
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px !important;
+  padding: 3rem;
+}

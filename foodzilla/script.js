@@ -47,27 +47,27 @@ const menus = {
     1: {
         title: "Monster Meals",
         description: "Giant meals for giant cravings.",
-        image: "#"
+        image: "imgs/monstermeals.png"
     },
     2: {
         title: "Tiny Bites",
         description: "Mini delights with maximum flavor.",
-        image: "#"
+        image: "imgs/tinybites.png"
     },
     3: {
         title: "Snack Attacks",
         description: "When hunger strikes between meals.",
-        image: "#"
+        image: "imgs/snackattacks.png"
     },
     4: {
         title: "Guilty Pleasures",
         description: "Sinfully tasty and worth every bite.",
-        image: "#"
+        image: "imgs/guiltypleasures.png"
     },
     5: {
         title: "Crave Crushers",
         description: "Cravings? Crushed.",
-        image: "#"
+        image: "imgs/cravecrushers.png"
     }
 };
 
@@ -76,17 +76,17 @@ const desserts = {
     1: {
         title: "Sweetzilla",
         description: "A monstrous delight of chocolate and cream.",
-        image: "#"
+        image: "imgs/sweetzilla.png"
     },
     2: {
         title: "Sugar Rush",
         description: "A sugar-packed combo to boost your energy.",
-        image: "#"
+        image: "imgs/sugarrush.png"
     },
     3: {
         title: "Cravings Corner",
         description: "Satisfy your sweet tooth with our house specials.",
-        image: "#"
+        image: "imgs/cravingscorner.png"
     }
 };
 
